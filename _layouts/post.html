@@ -20,18 +20,10 @@ layout: default
   </article>
 
   <div class="page-navigation code">
-    {% assign index_link = page.categories[0] %}
+    {% assign index_link = page.categories | first %}
 
-    {% if page.next.url and page.next.categories == page.categories %}
-      <a class="next" href="{{ page.next.url | prepend: site.baseurl | prepend: site.url }}" title="NEXT: {{page.next.title}}">&lt;&lt;</a>
-      <span> &middot; </span>
-    {% endif %}
-      <a class="home" href="{{ index_link | prepend: '/' | prepend: site.baseurl | prepend: site.url }}" title="Back to Index">Index</a>
-    {% if page.previous.url and page.previous.categories == page.categories %}
-      <span> &middot; </span>
-      <a class="prev" href="{{ page.previous.url | prepend: site.baseurl | prepend: site.url }}" title="PREV: {{page.previous.title}}">&gt;&gt;</a>
-    {% endif %}
-  </div>
+    <a class="home" href="{{ index_link | prepend: '/' | prepend: site.baseurl | prepend: site.url }}" title="Back to Index">Index</a>
+
 
 </div>
 
