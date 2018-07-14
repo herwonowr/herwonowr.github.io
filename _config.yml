@@ -1,1 +1,44 @@
-theme: jekyll-theme-cayman
+# Site Info
+title:              "VULNCODE"
+description:        "Cybersecurity Advisory"
+author_name:        "VULNC0D3"
+logo_url:           https://avatars3.githubusercontent.com/u/3977708?v=4
+
+# Site Settings
+url:                https://vulncode.com
+permalink:          /:categories/:title
+timezone:           Asia/Jakarta
+mathjax:            true
+
+# Site Build
+highlighter:        rouge
+markdown:           kramdown
+kramdown:
+    input:          GFM
+sass:
+    style:          :compressed
+
+# Other Params
+include:            [ "robots.txt" ]
+exclude:            [ "LICENSE", "README.md", "CNAME", "vendor", "Gemfile" ]
+plugins:
+  - jekyll-sitemap
+
+
+
+defaults:
+  -
+    scope:
+      path:         ""
+    values:
+      layout:       "null"
+  -
+    scope:
+      type:         "pages"
+    values:
+      layout:       "page"
+  -
+    scope:
+      type:         "posts"
+    values:
+      layout:       "post"

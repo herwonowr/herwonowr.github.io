@@ -1,0 +1,17 @@
+<aside class="logo">
+
+	{% if page.url == '/index.html' or page.url == '/' %}
+		{% assign link = '/about' %}
+	{% else %}
+		{% assign link = '/' %}
+	{% endif %}
+
+	<a href="{{ link | prepend: site.baseurl | prepend: site.url }}">
+		<img src="{{ site.logo_url }}" class="logo-avatar">
+	</a>
+
+</aside>
+
+<aside class="back-to-index">
+  <a href="{{ link | prepend: site.baseurl | prepend: site.url }}">Back to Index</a>
+</aside>
