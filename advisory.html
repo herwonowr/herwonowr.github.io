@@ -9,8 +9,8 @@ layout: default
   <section>
     <h3 class="code big-title">ADVISORY</h3>
     {% for post in site.posts %}
-      {% if post.categories contains "advisory" %}
-        {% unless post.next and post.next.categories contains "advisory" %}
+      {% if post.categories contains 'advisory' %}
+        {% unless post.next %}
           <h3 class="code">{{ post.date | date: '%Y' }}</h3>
         {% else %}
           {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
