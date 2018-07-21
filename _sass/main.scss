@@ -418,6 +418,11 @@ section {
       color: #454545;
       font-weight: 200;
       letter-spacing: 1rem;
+      .title-dark {
+        background-color: #000;
+        color: #fff;
+        padding-left: 15px;
+      }
       &::before,
       &::after {
         font-size: 22px;
@@ -428,9 +433,10 @@ section {
       }
       &::before {
         content: '„';
-        top: -6px;
+        top: -4px;
         right: -10px;
         font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto, Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue, sans-serif;
+        color: #fff;
       }
       &::after {
         content: '„';
@@ -470,8 +476,9 @@ section {
         &::before {
           content: '„';
           top: -3px;
-          right: -15px;
+          right: -11px;
           font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto, Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue, sans-serif;
+          color: #fff;
         }
         &::after {
           content: '„';
@@ -552,6 +559,7 @@ section {
   }
 }
 nav {
+  text-align: center;
   a {
     text-decoration: none;
     padding: 10px;
