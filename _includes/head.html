@@ -8,7 +8,12 @@
 	<title>{{ site.title }}</title>
 {% endif %}
 
-<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+<meta name="description" content="The CyberSec Advisory - Exploits, Shellcode, Vulnerability Reports, Security Articles, Tutorials and more.">
+<meta name="keywords" content="Cyber, Cybersecurity, CVE, Exploit, Security, Information Security, Vulnerability">
+<meta name="robots" content="index, follow">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="revisit-after" content="1 days">
+<meta name="author" content="VULNC0D3">
 
 <link rel="icon" href="{{ "/assets/favicon.ico" | prepend: site.baseurl | prepend: site.url }}">
 <link rel="apple-touch-icon" href="{{ "/assets/touch-icon.png" | prepend: site.baseurl | prepend: site.url }}">
