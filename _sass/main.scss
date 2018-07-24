@@ -566,6 +566,17 @@ nav {
     text-decoration: none;
     padding: 10px;
     display: block;
+    letter-spacing: .4rem;
+    transition: all .2s;
+    border: none;
+  }
+  .divider {
+    background: #ddd;
+    background: -webkit-gradient(linear,left top,right top,from(rgba(255,255,255,0)),color-stop(#ccc),to(rgba(255,255,255,0)));
+    background: -webkit-linear-gradient(left,rgba(255,255,255,0),#ccc,rgba(255,255,255,0));
+    background: linear-gradient(to right,rgba(255,255,255,0),#ccc,rgba(255,255,255,0));
+    height: 1px;
+    margin: .3em 0;
   }
   @media (min-width: 768px) {
     margin-top: 60px;
@@ -584,9 +595,13 @@ nav {
       transition: all .2s;
       letter-spacing: .6rem;
       text-align: center;
+      border-bottom: 1px solid #ddd;
       span {
         margin-right: -0.6rem;
       }
+    }
+    .divider {
+      display: none;
     }
   }
 }
