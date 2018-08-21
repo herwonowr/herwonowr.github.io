@@ -1,0 +1,60 @@
+---
+layout: default
+---
+
+{% include header.html %}
+
+<div id="content">
+
+  <article>
+
+    <div class="center">
+      <h1 class="title">{{ page.title }}</h1>
+      <time class="code">{{ page.date | date: '%B %-d, %Y' }}</time>
+    </div>
+
+    <div class="divider"></div>
+    <div id="encrypted-report">
+
+      {{ content }}
+
+      <form id="protected-form" class="protected-form" action="#" method="post">
+        <div class="input-protected-passphrase">
+          <input id="protected-passphrase" class="protected-passphrase" type="password" name="password" placeholder="Password" autofocus />
+        </div>
+        <input type="submit" class="decrypt-button" value="OPEN" />
+      </form>
+
+    </div>
+
+  </article>
+
+  <div class="page-navigation code">
+    {% assign index_link = page.categories | first %}
+
+    <a class="home" href="{{ index_link | prepend: '/' | prepend: site.baseurl | prepend: site.url }}" title="Back to Index">Index</a>
+
+
+</div>
+
+<script src="{{ '/assets/js/kryptojs-3.1.9-1-lib.js' | prepend: site.baseurl | prepend: site.url }}"></script>
+
+<script>
+  document.getElementById('protected-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var passphrase = document.getElementById('protected-passphrase').value,
+          encryptedMsg = encReport,
+          encryptedHMAC = encryptedMsg.substring(0, 64),
+          encryptedHTML = encryptedMsg.substring(64),
+          decryptedHMAC = CryptoJS.HmacSHA256(encryptedHTML, CryptoJS.SHA256(passphrase).toString()).toString();
+      if (decryptedHMAC !== encryptedHMAC) {
+          alert('Bad password!');
+          return;
+      }
+      var plainHTML = CryptoJS.AES.decrypt(encryptedHTML, passphrase).toString(CryptoJS.enc.Utf8);
+      var decryptedMsg = '<pre>' + plainHTML + '</pre>';
+      document.getElementById('encrypted-report').innerHTML = decryptedMsg;
+      document.close();
+  });
+</script>
+{% include footer.html %}
