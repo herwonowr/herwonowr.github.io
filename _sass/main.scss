@@ -524,19 +524,6 @@ section {
           position: absolute;
           font-weight: 300;
         }
-        &::before {
-          content: '„';
-          top: -3px;
-          right: -11px;
-          font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto, Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue, sans-serif;
-          color: #fff;
-        }
-        &::after {
-          content: '„';
-          left: -15px;
-          bottom: 0;
-          font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto, Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue, sans-serif;
-        }
       }
       h2 {
         margin: 8px 40px -10px 0;
